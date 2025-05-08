@@ -1,0 +1,11 @@
+<h2>Список відео</h2>
+<input type="text" ng-model="search" placeholder="Пошук по жанру...">
+<ul>
+    <li ng-repeat="video in videos | filter:search">
+        <strong>{{video.title}}</strong> — {{video.genre}}<br>
+        {{video.description}}<br>
+        <a href="#/edit/{{video._id}}">Редагувати</a>
+        <button ng-click="delete(video._id)">Видалити</button>
+    </li>
+</ul>
+<a href="#/add">Додати відео</a>

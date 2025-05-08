@@ -1,0 +1,17 @@
+<div class="container py-4">
+    <h2 class="mb-4">Список відео</h2>
+  
+    <input type="text" class="form-control mb-3" placeholder="Пошук по жанру..." ng-model="search">
+  
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="video in videos | filter:search">
+        <h5>{{ video.title }} <small class="text-muted">— {{ video.genre }}</small></h5>
+        <p class="mb-2">{{ video.description }}</p>
+        <a class="btn btn-primary btn-sm me-2" href="#/edit/{{video._id}}">Редагувати</a>
+        <button class="btn btn-danger btn-sm" ng-click="deleteVideo(video)">Видалити</button>
+      </li>
+    </ul>
+  
+    <a class="btn btn-success mt-4" href="#/add">Додати відео</a>
+  </div>
+  
